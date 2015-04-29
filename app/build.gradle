@@ -24,4 +24,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     //recycle view support library
     compile 'com.android.support:recyclerview-v7:21.0.0'
+    //dspec library to check material design standard
+    compile 'org.lucasr.dspec:dspec:0.1.1'
 }

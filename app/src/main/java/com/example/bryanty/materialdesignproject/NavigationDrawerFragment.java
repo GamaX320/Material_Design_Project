@@ -2,6 +2,7 @@ package com.example.bryanty.materialdesignproject;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends Fragment implements DrawerItemAdapter.ClickListener{
 
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
@@ -55,6 +56,7 @@ public class NavigationDrawerFragment extends Fragment {
 
         //drawer item
         adapter= new DrawerItemAdapter(getActivity(), getData());
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -115,8 +117,8 @@ public class NavigationDrawerFragment extends Fragment {
     public static List<DrawerItem> getData(){
         List<DrawerItem> data= new ArrayList<>();
 
-        data.add(new DrawerItem(R.mipmap.ic_next,"Dummy 1"));
-        data.add(new DrawerItem(R.mipmap.ic_next,"Dummy 2"));
+        data.add(new DrawerItem(R.mipmap.ic_test,"Dummy 1"));
+        data.add(new DrawerItem(R.mipmap.ic_test2,"Dummy 2"));
         data.add(new DrawerItem(R.mipmap.ic_next,"Dummy 3"));
 
         return data;
@@ -134,5 +136,11 @@ public class NavigationDrawerFragment extends Fragment {
     public static String readFromPreferences(Context context, String preferenceName, String defaultValue){
         SharedPreferences sharedPreferences= context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(preferenceName, defaultValue);
+    }
+
+    //interface implement method to navigation drawer item clicked
+    @Override
+    public void itemClicked(View view, int position) {
+        startActivity(new Intent(getActivity(), MyActivity.class));
     }
 }
