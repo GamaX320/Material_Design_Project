@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/containerCoverImage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="280dp"
@@ -20,8 +20,10 @@
 
     <!-- recycle view -->
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawerList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/containerCoverImage">
 
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
