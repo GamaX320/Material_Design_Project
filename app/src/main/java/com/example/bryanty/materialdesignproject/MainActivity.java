@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 
+import com.example.bryanty.materialdesignproject.tabs.TabsActivity;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -48,7 +50,8 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         else if(id == R.id.action_next){
-            startActivity(new Intent(this, MyActivity.class));
+            //startActivity(new Intent(this, MyActivity.class));
+            startActivity(new Intent(this, TabsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
