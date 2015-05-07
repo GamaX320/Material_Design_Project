@@ -1,6 +1,9 @@
 package com.example.bryanty.materialdesignproject;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 
+import com.example.bryanty.materialdesignproject.tabs.TabFragment;
 import com.example.bryanty.materialdesignproject.tabs.TabsActivity;
+import com.example.bryanty.materialdesignproject.tabs_with_library.TabsWithLibraryActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -53,7 +58,32 @@ public class MainActivity extends ActionBarActivity {
             //startActivity(new Intent(this, MyActivity.class));
             startActivity(new Intent(this, TabsActivity.class));
         }
+        else if(id == R.id.action_tabs_with_library){
+            startActivity(new Intent(this, TabsWithLibraryActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //pager adapter
+    class MyPagerAdapter extends FragmentPagerAdapter {
+
+        int icons[]= {R.mipmap.ic_next, R.mipmap.ic_test, R.mipmap.ic_test2};
+        String[] tabText= {"Tab 1","Tab 2","Tab 3"};
+
+        MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            TabFragment tabFragment= TabFragment.getInstance(position);
+            return tabFragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 }

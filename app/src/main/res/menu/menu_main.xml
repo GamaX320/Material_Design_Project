@@ -5,6 +5,9 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 
+    <item android:id="@+id/action_tabs_with_library" android:title="@string/title_activity_tabs_with_library"
+        android:orderInCategory="100" app:showAsAction="never" />
+
     <item android:id="@+id/action_next"
         android:title="@string/action_next"
         android:orderInCategory="200"

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bryanty.materialdesignproject" >
 
+    <!-- internet access permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,6 +30,14 @@
         <activity
             android:name=".tabs.TabsActivity"
             android:label="@string/title_activity_tabs"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bryanty.materialdesignproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".tabs_with_library.TabsWithLibraryActivity"
+            android:label="@string/title_activity_tabs_with_library"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

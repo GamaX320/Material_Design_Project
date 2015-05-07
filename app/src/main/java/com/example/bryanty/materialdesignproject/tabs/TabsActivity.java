@@ -1,12 +1,16 @@
 package com.example.bryanty.materialdesignproject.tabs;
 
 
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ImageSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
@@ -33,6 +37,13 @@ public class TabsActivity extends ActionBarActivity {
         mPager= (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         mTabs= (SlidingTabLayout)findViewById(R.id.tabs);
+        //set custom tab view
+        mTabs.setDistributeEvenly(true);
+        mTabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
+        //set slider background color and selected color to accent color
+        mTabs.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        mTabs.setSelectedIndicatorColors(getResources().getColor(R.color.accentColor));
+
         mTabs.setViewPager(mPager);
     }
 
@@ -60,7 +71,10 @@ public class TabsActivity extends ActionBarActivity {
     }
 
     //pager adapter
-    class MyPagerAdapter extends FragmentPagerAdapter{
+    class MyPagerAdapter extends FragmentPagerAdapter {
+
+        int icons[]= {R.mipmap.ic_test, R.mipmap.ic_test, R.mipmap.ic_test2};
+        String[] tabText= {"Tab 1","Tab 2","Tab 3"};
 
         MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -70,6 +84,21 @@ public class TabsActivity extends ActionBarActivity {
         public Fragment getItem(int position) {
             TabFragment tabFragment= TabFragment.getInstance(position);
             return tabFragment;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            //icon
+            Drawable drawable= getResources().getDrawable(icons[position]);
+            //drawable.setBounds(0,0,36,36);
+            drawable.setBounds(0,0,72,72);
+
+            //imagespan is something combine text and image together
+            ImageSpan imageSpan= new ImageSpan(drawable);
+            SpannableString spannableString= new SpannableString(" ");
+            spannableString.setSpan(imageSpan, 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            return spannableString;
         }
 
         @Override
