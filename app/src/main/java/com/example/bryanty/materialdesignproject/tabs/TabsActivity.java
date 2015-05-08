@@ -32,6 +32,7 @@ public class TabsActivity extends ActionBarActivity {
         toolbar=(Toolbar)findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //add tabs layout
         mPager= (ViewPager)findViewById(R.id.pager);

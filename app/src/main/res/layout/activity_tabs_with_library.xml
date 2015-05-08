@@ -1,29 +1,33 @@
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout">
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <!-- include custom toolbar -->
-    <include android:id="@+id/app_bar" layout="@layout/app_bar"/>
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
 
-    </LinearLayout>
+    <!-- for Text Tabs -->
+    <it.neokree.materialtabs.MaterialTabHost
+        android:id="@+id/materialTabHost"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/app_bar"
+        app:accentColor="@color/accentColor"
+        app:primaryColor="@color/primaryColor"
+        app:textColor="@android:color/white"
+        />
 
-    <!-- frame layout -->
-    <fragment
-        android:id="@+id/fragment_tabs"
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:layout="@layout/fragment_navigation_drawer"
-        android:name="com.example.bryanty.materialdesignproject.NavigationDrawerFragment"
-        tools:layout="@layout/fragment_navigation_drawer" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/materialTabHost"
+        android:layout_weight="1"/>
 
-
-</android.support.v4.widget.DrawerLayout>
+</LinearLayout>

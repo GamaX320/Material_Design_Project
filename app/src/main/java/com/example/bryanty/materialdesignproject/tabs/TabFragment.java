@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.bryanty.materialdesignproject.R;
+import com.example.bryanty.materialdesignproject.network.VolleySingleton;
 
 import org.w3c.dom.Text;
 
@@ -47,13 +48,15 @@ public  class TabFragment extends Fragment{
         }
 
         //volley request
-        RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
+        //RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
+        RequestQueue requestQueue= VolleySingleton.getInstance().getRequestQueue();
+
         //StringRequest( Request method, Url, Response, Error)
         StringRequest request= new StringRequest(Request.Method.GET, "http://www.google.com", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //get some data and response
-                //Toast.makeText(getActivity(), "Response "+response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Response "+response, Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
