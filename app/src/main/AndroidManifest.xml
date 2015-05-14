@@ -44,6 +44,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bryanty.materialdesignproject.MainActivity" />
         </activity>
+        <activity
+            android:name=".VectorTestActivity"
+            android:label="@string/title_activity_vector_test"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bryanty.materialdesignproject.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 import com.example.bryanty.materialdesignproject.R;
 import com.example.bryanty.materialdesignproject.tabs.TabFragment;
+import com.example.bryanty.materialdesignproject.tabs.TabFragment1;
+import com.example.bryanty.materialdesignproject.tabs.TabFragment2;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
@@ -26,6 +28,11 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
     private Toolbar toolbar;
     private ViewPager viewPager;
     private MaterialTabHost tabHost;
+
+    //fragment position
+    public static final int DEFAULT_FRAGMENT= 0;
+    public static final int FIRST_FRAGMENT= 1;
+    public static final int SECOND_FRAGMENT= 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,7 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
         MyPagerAdapter adapter= new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -54,6 +62,7 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
             public void onPageSelected(int position) {
                 // when user do a swipe the selected tab change
                 tabHost.setSelectedNavigationItem(position);
+
             }
 
             @Override
@@ -126,7 +135,21 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
         @Override
         public Fragment getItem(int position) {
             TabFragment tabFragment= TabFragment.getInstance(position);
-            return tabFragment;
+
+            Fragment fragment= null;
+            switch(position){
+                case DEFAULT_FRAGMENT:
+                    fragment= TabFragment1.newInstance("", "");
+                    break;
+                case FIRST_FRAGMENT:
+                    fragment= TabFragment1.newInstance("","");
+                    break;
+                case SECOND_FRAGMENT:
+                    fragment= TabFragment2.newInstance("", "");
+                    break;
+            }
+            //return tabFragment;
+            return fragment;
         }
 
         @Override

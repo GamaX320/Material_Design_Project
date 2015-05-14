@@ -6,6 +6,9 @@
         android:orderInCategory="100" app:showAsAction="never" />
 
     <item android:id="@+id/action_tabs_with_library" android:title="@string/title_activity_tabs_with_library"
+    android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_vector_test" android:title="@string/title_activity_vector_test"
         android:orderInCategory="100" app:showAsAction="never" />
 
     <item android:id="@+id/action_next"

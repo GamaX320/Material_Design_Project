@@ -61,6 +61,9 @@ public class MainActivity extends ActionBarActivity {
         else if(id == R.id.action_tabs_with_library){
             startActivity(new Intent(this, TabsWithLibraryActivity.class));
         }
+        else if(id == R.id.action_vector_test){
+            startActivity(new Intent(this, VectorTestActivity.class));
+        }
 
         return super.onOptionsItemSelected(item);
     }
