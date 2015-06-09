@@ -18,6 +18,7 @@ import com.example.bryanty.materialdesignproject.R;
 import com.example.bryanty.materialdesignproject.tabs.TabFragment;
 import com.example.bryanty.materialdesignproject.tabs.TabFragment1;
 import com.example.bryanty.materialdesignproject.tabs.TabFragment2;
+import com.example.bryanty.materialdesignproject.tabs.TabFragment3;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
@@ -33,6 +34,7 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
     public static final int DEFAULT_FRAGMENT= 0;
     public static final int FIRST_FRAGMENT= 1;
     public static final int SECOND_FRAGMENT= 2;
+    public static final int THRID_FRAGMENT=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +128,7 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
     class MyPagerAdapter extends FragmentPagerAdapter {
 
         int icons[]= {R.mipmap.ic_test, R.mipmap.ic_test, R.mipmap.ic_test2};
-        String[] tabText= {"Tab 1","Tab 2","Tab 3"};
+        String[] tabText= {"Tab 1","Tab 2","Tab 3","Tab 4"};
 
         MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -147,6 +149,10 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
                 case SECOND_FRAGMENT:
                     fragment= TabFragment2.newInstance("", "");
                     break;
+                case THRID_FRAGMENT:
+                    fragment= TabFragment3.newInstance("", "");
+                    break;
+
             }
             //return tabFragment;
             return fragment;
@@ -170,7 +176,7 @@ public class TabsWithLibraryActivity extends ActionBarActivity implements Materi
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
     }
 }
