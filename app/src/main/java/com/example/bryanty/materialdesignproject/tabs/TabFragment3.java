@@ -68,8 +68,8 @@ public class TabFragment3 extends Fragment {
     /********************/
     JSONParser jsonParser = new JSONParser();
     // url to create new product
- //   private static String url_create_product = "http://terminaltester.net16.net/testing/CreateFile.php";
-    private static String url_create_product = "http://terminaltester.net16.net/testing/CreateXMLFile.php";
+   private static String url_create_product = "http://terminaltester.net16.net/testing/CreateFile.php";
+    //private static String url_create_product = "http://terminaltester.net16.net/testing/CreateXMLFile.php";
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
 
@@ -188,7 +188,7 @@ public class TabFragment3 extends Fragment {
 
         @Override
         protected String doInBackground(String... args) {
-            String name = "who am i";
+            String name = "who am i, i am who?";
             String price = "999999999";
             String description = "hello world";
 
