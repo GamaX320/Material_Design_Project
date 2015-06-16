@@ -14,4 +14,5 @@
     <string name="title_activity_tabs">TabsActivity</string>
     <string name="title_activity_tabs_with_library">TabsWithLibraryActivity</string>
     <string name="title_activity_vector_test">VectorTestActivity</string>
+    <string name="title_activity_text_field">TextFieldActivity</string>
 </resources>

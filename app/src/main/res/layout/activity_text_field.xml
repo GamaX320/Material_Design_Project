@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bryanty.materialdesignproject.textfield_with_library.TextFieldActivity">
+
+    <!-- include custom toolbar -->
+    <include android:id="@+id/app_bar" layout="@layout/app_bar"/>
+
+    <TextView
+        android:id="@+id/helloworld"
+        android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_bar"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/textfield_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Basic"
+        android:layout_below="@+id/helloworld"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:met_floatingLabel="normal"
+        app:met_minCharacters="5"
+        app:met_maxCharacters="10"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/textfield_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Basic 2"
+        android:layout_below="@+id/textfield_1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/textfield_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Basic 3"
+        android:layout_below="@+id/textfield_2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:met_iconLeft="@mipmap/ic_launcher"
+        />
+
+</RelativeLayout>

@@ -11,6 +11,9 @@
     <item android:id="@+id/action_vector_test" android:title="@string/title_activity_vector_test"
         android:orderInCategory="100" app:showAsAction="never" />
 
+    <item android:id="@+id/action_material_texfield" android:title="@string/title_activity_text_field"
+        android:orderInCategory="100" app:showAsAction="never" />
+
     <item android:id="@+id/action_next"
         android:title="@string/action_next"
         android:orderInCategory="200"

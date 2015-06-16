@@ -30,4 +30,6 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.+'
     //neokree tabs library
     compile 'it.neokree:MaterialTabs:0.11'
+    // rengwuxian text field library
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
 }

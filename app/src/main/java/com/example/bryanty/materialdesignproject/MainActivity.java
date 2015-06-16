@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import com.example.bryanty.materialdesignproject.tabs.TabFragment;
 import com.example.bryanty.materialdesignproject.tabs.TabsActivity;
 import com.example.bryanty.materialdesignproject.tabs_with_library.TabsWithLibraryActivity;
+import com.example.bryanty.materialdesignproject.textfield_with_library.TextFieldActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -63,6 +64,9 @@ public class MainActivity extends ActionBarActivity {
         }
         else if(id == R.id.action_vector_test){
             startActivity(new Intent(this, VectorTestActivity.class));
+        }
+        else if(id == R.id.action_material_texfield){
+            startActivity(new Intent(this, TextFieldActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

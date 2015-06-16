@@ -52,6 +52,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.bryanty.materialdesignproject.MainActivity" />
         </activity>
+        <activity
+            android:name=".textfield_with_library.TextFieldActivity"
+            android:label="@string/title_activity_text_field"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.bryanty.materialdesignproject.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
